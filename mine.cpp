@@ -314,6 +314,19 @@ int main()
     }
     else
     {
-        cout<<"baka"<<endl;
+        coolOutput("WHOA!\n");
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        coolOutputNoClear("You actually did it!\n");
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        coolOutputNoClear("Great Job\n");
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        coolOutputNoClear("Here's the bomb locations.\n");
+        game.bombHasBeenPicked();
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        coolOutputNoClear("Press enter to exit.");
+        string garbage;
+        cin.clear();
+        cin.ignore(256,'\n');
+        getline(cin, garbage);
     }
 }
