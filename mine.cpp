@@ -314,6 +314,6 @@ int main()
     }
     else
     {
-
+        cout<<"baka"<<endl;
     }
 }

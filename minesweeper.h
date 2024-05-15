@@ -351,6 +351,7 @@ public:
                 }
             }
             cout<<endl;
+            cout<<"Amount of bombs: "<<to_string(bombs)<<endl;
         }
     }
 
@@ -512,7 +513,21 @@ public:
 
         if(bombs >= flags)
         {
-            
+            //need to check if these flags are even bombs
+            for(int i = 0; i < mapY; i++)
+            {
+                for(int j= 0; j < mapX; j++)
+                {
+                    if(mappy[i][j].returnFlagStatus())
+                    {
+                        if(!mappy[i][j].isThisABomb())
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+
             return true;
         }
         else
